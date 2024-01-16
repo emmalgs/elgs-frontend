@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Kosugi&family=Open+Sans:wght@300;400;700&family=Pirata+One&family=Shrikhand&display=swap');
 
+
+:root {
+  --red: #F82D00;
+  --mustard: #D9B700;
+  --pink: #FFE9E9;
+  --mint-green: #9AE4C0;
+  --cobalt: #0019F8;
+  --pale-green: #E3FFDA;
+  --black: #1C1313;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,6 +20,17 @@ body {
   font-family: 'Kosugi', monospace, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.splash-main {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(10, 10vw);
+  grid-template-rows: repeat(10, 10vh);
+}
+
+.splash-title {
+  grid-area: 1 / 1 / 5 / 10;
 }
 
 .marquee {
@@ -30,6 +52,21 @@ body {
 
 .marquee__content span {
   font-size: 5rem;
+  color: var(--red);
+}
+
+.splash-img-container {
+  grid-area: 3 / 3 / 9 / 9;
+  width: 450px;
+  height: 450px;
+  background-image: url('./assets/img/hand3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.splash-enter-container {
+  grid-area: 9 / 5 / 11 / 7;
 }
 
 .splash-background {
@@ -39,8 +76,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   z-index: -99;
 }
 
@@ -49,7 +86,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - var(--gap)));
+    transform: translateX(calc(-50% - var(--gap)));
   }
 }
 
